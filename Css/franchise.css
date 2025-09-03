@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+.header {
+  background: #3c2b1c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.franchise-btn {
+  background: #f97316;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.franchise-banner {
+  background: #000;
+  color: white;
+ 
+  text-align: center;
+}
+
+.franchise-banner img {
+  background: #000;
+  color: white;
+  padding: 0rem;
+  width: 100%;
+  height: 55%;
+}
+
+.form-section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+.franchise-form input,
+.franchise-form select,
+.franchise-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.download-btn,
+.send-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.download-btn {
+  background: white;
+  color: #f97316;
+  border: 2px solid #f97316;
+}
+
+.send-btn {
+  background: #f97316;
+  color: white;
+}
+
+.fee-section {
+  padding: 2rem;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.fee-section h2 {
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
