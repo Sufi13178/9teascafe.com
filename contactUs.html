@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>9Tea's Cafe - Contact Us</title>
+  <link rel="stylesheet" href="Css/contact.css"/>
+</head>
+<body>
+
+   <!-- Include loader script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('include-html');
+        fetch(file)
+          .then(res => {
+            if (!res.ok) throw new Error('File not found');
+            return res.text();
+          })
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute('include-html');
+          })
+          .catch(err => {
+            el.innerHTML = "<!-- Error loading include -->";
+          });
+      });
+    });
+  </script>
+
+  <!-- Include header.html -->
+  <div include-html="header.html"></div>
+
+  <section class="contact-heading">
+    <h2>Contact Us.</h2>
+  </section>
+
+  <section class="intro">
+    <h3>Are You Hungry?<br>Come, Dine With Us!</h3>
+    <div class="contact-info">
+      <p><strong>Contact No.</strong><br>+91-9967180891</p>
+      <p><strong>Email Id</strong><br>cafe9teas@gmail.com</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h3>Leave a Message</h3>
+    <p>How May I Help You?</p>
+    <form id="dataForm" class="contact-form">
+      <input type="text" name="first_name" placeholder="Name*" required />
+      <input type="text" name="phone_No" placeholder="Phone No.*" required />
+      <input type="email" name="email_id" placeholder="Email*" required />
+      <input type="text" name="subject" placeholder="Subject*" required />
+      <textarea  name="msg"placeholder="Message*" required></textarea>
+      <button type="button" onclick="submitToGoogleSheet()">Send</button>
+    </form>
+    <div class="head-office">
+      <h4>Head Office</h4>
+      <p>Shop no. 1 & 2 Sundar Bhavan, Navghar Fatak Road Opp. Navghar police Station Bhayander (East), Mumbai - 401105</p>
+      <p><strong>Email Id:</strong> cafe9teas@gmail.com</p>
+      <p><strong>Contact no.:</strong> +919967180891</p>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2585208022717!2d72.8620705!3d19.3065568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b12108a6b17f%3A0x7e7c1735a0dd7127!2s9%20Tea&#39;s%20Cafe!5e0!3m2!1sen!2sin!4v1720612345678!5m2!1sen!2sin" 
+  width="100%" 
+  height="350" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+  </section>
+
+  <!-- Include footer.html -->
+  <div include-html="footer.html"></div>
+<!-- SweetAlert2 CDN (optional but better UX) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz8I3E9Q02af9ryw6OPxSg00zt-PvRUcRFOUOJ9ApzNENBszFhfWy9KYf7wAJ5cxI1b/exec'; 
+  
+  async function submitToGoogleSheet() {
+    const form = document.getElementById('dataForm');
+    const formData = new FormData(form);
+
+    // Get field values
+    const first_name = formData.get('first_name');
+    const phone_Number = formData.get('phone_No');
+    const email_id = formData.get('email_id');
+    const subject = formData.get('subject');
+    const message = formData.get('msg');
+
+    // 🔴 Simple Validation
+    if (!first_name || !phone_Number || !email_id || !subject || !message) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'All fields are required!',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+
+    const data = {
+      first_name,
+      phone_Number,
+      email_id,
+      subject,
+      message
+    };
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        mode: 'no-cors',
+      });
+
+      Swal.fire({
+        icon: 'success',
+        title: '✅ Submitted Successfully!',
+        confirmButtonText: 'OK'
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error('Error!', error.message);
+      Swal.fire({
+        icon: 'error',
+        title: '❌ Submission Failed!',
+        text: error.message,
+        confirmButtonText: 'Retry'
+      });
+    }
+  }
+</script>
+
+</body>
+</html>

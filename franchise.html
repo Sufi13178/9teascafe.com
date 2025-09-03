@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Franchise | 9Teas Cafe</title>
+  <link rel="stylesheet" href="Css/franchise.css" />
+</head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body>
+
+  <!-- Header -->
+  <!-- Include loader script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('include-html');
+        fetch(file)
+          .then(res => {
+            if (!res.ok) throw new Error('File not found');
+            return res.text();
+          })
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute('include-html');
+          })
+          .catch(err => {
+            el.innerHTML = "<!-- Error loading include -->";
+          });
+      });
+    });
+  </script>
+
+  <!-- Include header.html -->
+  <div include-html="header.html"></div>
+
+  <!-- Franchise Title -->
+  <section class="franchise-banner">
+    <img src="images/background-image.jpeg" alt="frenchise">
+  </section>
+
+  <!-- Franchise Form -->
+  <section class="form-section">
+    <h2>Franchise Registration</h2>
+    <form id="frenchaiseData" class="franchise-form">
+      <div class="form-row">
+        <input type="text" name="first_name" placeholder="Your Name*" required>
+        <input type="text" name="contactNo" placeholder="Contact No.*" required>
+      </div>
+      <div class="form-row">
+        <input type="email" name="email_id" placeholder="Email Id*" required>
+        <input type="text"  name="city_Name" placeholder="Enter City Name" required>
+        
+        <select name="state_Name" required>
+          <option value="">State*</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="UP">Uttar Pradesh</option>
+          <option value="GU">Gujarat</option>
+          <option value="DH">Delhi</option>
+        </select>
+        <select name="inve" required>
+          <option value="">Select Your Investment</option>
+          <option value="TAK">7-Lakh</option>
+          <option value="DIN">12-Lakh</option>
+        </select>
+      </div>
+      <div class="form-row">
+      <input type="text" name="franchise_subject" placeholder="Subject*" required>
+      
+      </div>
+     
+      <textarea placeholder="Message*" name="franchise_msg" rows="5" required></textarea>
+      <div class="form-buttons">
+      <a href="brochure pdf/9teascafeBrochure.pdf" class="download-btn" download style="text-decoration: none;">Download Brochure</a>
+        <button type="button" onclick="submitToGoogleSheetfrn()" class="send-btn">Send</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Franchise Fee Info -->
+  <section class="fee-section">
+    <h2>STEP INTO BUSINESS WITH CONFIDENCE</h2>
+    <p>
+      "YOUR CITY'S NEXT FAVOURITE CAFE COULD HAVE YOUR NAME ON IT, ENQUIRE NOW."
+    </p>
+  </section>
+
+  <!-- Include footer.html -->
+  <div include-html="footer.html"></div>
+
+<!--<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwtO-bM-gkxJZqbkHP-cpkO7sZV5CdGo-XJjJgTCyCQkTH7BR0imNGk35QW7rr6rSFZ/exec'; 
+        async function submitToGoogleSheetfrn() {
+          
+            const form = document.getElementById('frenchaiseData');
+            const formData = new FormData(form);
+
+            const data = {
+                first_name: formData.get('first_name'),
+                contactNo: formData.get('contactNo'),
+                email_id: formData.get('email_id'),
+                  city_Name: formData.get('city_Name'),
+                    state_Name: formData.get('state_Name'),
+                    franchise_subject: formData.get('franchise_subject'),
+                    franchise_msg:formData.get('franchise_msg'),
+
+
+            };
+                     console.log(data)
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'},
+                    mode:'no-cors',
+                });
+
+                alert('✅ Data submitted successfully!');
+                  form.reset(); // Clear all fields
+                   
+                
+            } catch (error) {
+
+              console.error('Error!', error.message);
+               alert('❌ Submission failed!');
+
+                           }
+        }
+
+</script>-->
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwtO-bM-gkxJZqbkHP-cpkO7sZV5CdGo-XJjJgTCyCQkTH7BR0imNGk35QW7rr6rSFZ/exec'; 
+
+  async function submitToGoogleSheetfrn() {
+    const form = document.getElementById('frenchaiseData');
+    const formData = new FormData(form);
+
+    // Get form values
+    const first_name = formData.get('first_name').trim();
+    const contactNo = formData.get('contactNo').trim();
+    const email_id = formData.get('email_id').trim();
+    const city_Name = formData.get('city_Name').trim();
+    const state_Name = formData.get('state_Name').trim();
+    const franchise_subject = formData.get('franchise_subject').trim();
+    const franchise_msg = formData.get('franchise_msg').trim();
+
+    // Validation using swal
+    if (!first_name || !contactNo || !email_id || !city_Name || !state_Name || !franchise_subject || !franchise_msg) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Missing Fields',
+        text: 'Please fill in all the required fields.',
+        confirmButtonText: 'OK'
+      });
+      return false;
+    }
+
+    // Create data object
+    const data = {
+      first_name,
+      contactNo,
+      email_id,
+      city_Name,
+      state_Name,
+      franchise_subject,
+      franchise_msg,
+    };
+
+    console.log(data);
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        mode: 'no-cors',
+      });
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: '✅ Your data has been submitted successfully!',
+        confirmButtonText: 'OK'
+      });
+
+      form.reset(); // Clear all fields
+    } catch (error) {
+      console.error('Error!', error.message);
+      Swal.fire({
+        icon: 'error',
+        title: 'Submission Failed',
+        text: '❌ Something went wrong while submitting the form.',
+        confirmButtonText: 'OK'
+      });
+    }
+  }
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9'Teas Cafe</title>
+  <link rel="stylesheet" href="Css/styles.css" />
+  <!-- Font Awesome (for 📷 icon if needed) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+<!-- Glightbox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+  </head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- Include loader script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('include-html');
+        fetch(file)
+          .then(res => {
+            if (!res.ok) throw new Error('File not found');
+            return res.text();
+          })
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute('include-html');
+          })
+          .catch(err => {
+            el.innerHTML = "<!-- Error loading include -->";
+          });
+      });
+    });
+  </script>
+
+  <!-- Include header.html -->
+  <div include-html="header.html"></div>
+
+  <!-- Main Page Content Starts -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>A Cup Of Tea<br>Can Complete Your Day</h1>
+        </div>
+      <div class="hero-img">
+        <img src="images/tea-removebg-preview.png" alt="Cup of coffee" class="left-img"/>
+        
+      </div>
+    </div>
+  </section>
+<section class="menu menu-slider-section">
+  <div class="container">
+    <h2>Our Menu</h2>
+    <p class="subtitle">Just Choose From The Best</p>
+
+    <!-- Swiper Slider Starts -->
+    <div class="swiper menuSwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="menu-item">
+            <a href="images/pizza.png" class="glightbox">
+              <img src="images/pizza.png" alt="Pizza" class="menu-img">
+            </a>
+            <h4>Pizza</h4>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="menu-item">
+            <a href="images/mojito.png" class="glightbox">
+              <img src="images/mojito.png" alt="Mojito" class="menu-img">
+            </a>
+            <h4>Mojito</h4>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="menu-item">
+            <a href="images/burger.png" class="glightbox">
+              <img src="images/burger.png" alt="Burger" class="menu-img">
+            </a>
+            <h4>Burger</h4>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="menu-item">
+            <a href="images/french-fries.png" class="glightbox">
+              <img src="images/french-fries.png" alt="Fries" class="menu-img">
+            </a>
+            <h4>Fries</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation & Pagination -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper Slider Ends -->
+
+    <a class="btn-view-more" href="Menu.html">View More</a>
+  </div>
+</section>
+
+
+
+
+  <section class="reviews">
+    <div class="container">
+      <h2>Ratings and Review</h2>
+      <div class="review-list">
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        <div class="review-card">
+          <img src="images/Doc2.jpg" alt="Jessi"></img>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="special">
+    <div class="container">
+      <h2>Monthly special dishes</h2>
+      <p class="coming">Coming Soon...</p>
+      <div class="special-item">
+        <img src="images/momos.png" alt="Momos">
+        <div>
+          <h3>Momos</h3>
+          <div class="progress-bar"><div class="filled"></div></div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--<section class="special-branches">
+    <div class="container">
+      <p class="coming"></p>
+      <div class="special-item-branches">
+        <img src="images/branches.jpeg" alt="branchase">
+      </div>
+    </div>
+  </section>-->
+
+  <section class="tea-types">
+    <div class="container">
+      <h2>9 Tea’s Speciality</h2>
+      <p class="subtitle">We Serve 9 Types Of Tea</p>
+      <div class="tea-grid">
+        <div><img src="images/adrak.jpg" alt=""><span>Adrak Tea</span></div>
+        <div><img src="images/balcktea.webp" alt=""><span>Black Tea</span></div>
+        <div><img src="images/greenTea.jpg" alt=""><span>Green Tea</span></div>
+        <div><img src="images/lemontea.jpg" alt=""><span>Green Apple Tea</span></div>
+        <div><img src="images/lemon.jpg" alt=""><span>Lemon Tea</span></div>
+        <div><img src="images/masala.jpg" alt=""><span>Masala Tea</span></div>
+        <div><img src="images/tea.jpg" alt=""><span>Elaichi Tea</span></div>
+        <!--<div><img src="mint.jpg" alt=""><span>Black Mint Tea</span></div>-->
+        <div><img src="images/chocolate.jpg" alt=""><span>Chocolate Tea</span></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Page Content Ends -->
+
+<section id="gallery" class="gallery section light-background">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Gallery</h2>
+    <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": { "delay": 5000 },
+          "slidesPerView": "auto",
+          "centeredSlides": true,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": { "slidesPerView": 1, "spaceBetween": 0 },
+            "768": { "slidesPerView": 3, "spaceBetween": 20 },
+            "1200": { "slidesPerView": 5, "spaceBetween": 20 }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       
+        <!-- Add More Slides Here -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+</section>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Glightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<!-- Initialize -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+   new Swiper('.init-swiper', {
+  loop: true,
+  speed: 5000, // higher = slower movement
+  autoplay: {
+    delay: 0,   // no pause
+    disableOnInteraction: false,
+  },
+  slidesPerView: 'auto',
+  centeredSlides: false,
+  allowTouchMove: true, // still allow swipe manually
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    320: { slidesPerView: 1, spaceBetween: 10 },
+    768: { slidesPerView: 3, spaceBetween: 20 },
+    1200: { slidesPerView: 5, spaceBetween: 30 }
+  }
+});
+
+
+    GLightbox({
+  selector: '.glightbox',
+  openEffect: 'zoom',   // zoom-in
+  closeEffect: 'fade',  // fade-out
+  slideEffect: 'fade'   // smooth image transitions
+});
+
+  });
+</script>
+
+  
+
+  <!-- Include footer.html -->
+  <div include-html="footer.html"></div>
+
+
+  <script>
+  var swiper = new Swiper(".menuSwiper", {
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

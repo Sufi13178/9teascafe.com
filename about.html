@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | 9Teas Cafe</title>
+  <link rel="stylesheet" href="Css/about.css"/>
+</head>
+<body>
+  <!-- Include loader script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('include-html');
+        fetch(file)
+          .then(res => {
+            if (!res.ok) throw new Error('File not found');
+            return res.text();
+          })
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute('include-html');
+          })
+          .catch(err => {
+            el.innerHTML = "<!-- Error loading include -->";
+          });
+      });
+    });
+  </script>
+
+  <!-- Include header.html -->
+  <div include-html="header.html"></div>
+
+  <main>
+    <section class="about-section">
+      <h1>About Us.</h1>
+      <h2>Welcome to 9’Teas Cafe</h2>
+      <p>
+       "9 Tea's Cafe", Mira Bhayander twin cities most loved place for a cup of Tea, 
+       coffee or Satisfying Your taste buds. famously known as "9 Tea's", we endeavor
+        to give the best involvement to our visitors Our Variety of foods and Beverages
+         making memories with the visitors who made us our identity today and We're
+          happy to be a reason of their happiness. "9" Tea's Cafe" was founded by Young
+           Entrepreneur Amit Yadav and Rupesh Pendhari in 2019. at Bhayander East,
+            Thane - the adolescent and the youthful on a positive note took the cafe 
+            to rise up and it keeps on being a standout amongst the most happening spots 
+            in the twin city with the live events, offers, combos and contest running in every 
+            last week of the month "Celebrating 9 Tea's Week". It's been an energizing adventure 
+            from 2019 point forward to turning a step ahead into the most famous and loved cafe in
+             the places we serve. We're Likewise at 8 Different Locations, so if your movements takes
+              you there, do stop by our outlets to recover a taste" from home! Our Goal is to serve 
+              the best quality food with Uniqueness & Love..
+        
+       
+      </p>
+      <blockquote>“Our Goal is to serve the best quality food with Uniqueness & Love.”</blockquote>
+    </section>
+
+    <section class="founders-section">
+      <h2>Meet The Founders</h2>
+      <p>
+        As said behind every good player is a coach. Amit Yadav and Rupesh Pendhari were guided by mentor
+        C.A Prashant Tripathi (Founder of Elite Education). Inspired by their love for 90's and tea culture,
+        they launched "9 TEA'S CAFE".
+      </p>
+      <p class="highlight">"HUM UDNE KE LIYE BANE HAI"</p>
+      <p>#Humudnekiiyebanehai</p>
+    </section>
+
+    <section class="team-section">
+      <h2>Meet The Team</h2>
+      <div class="team-members">
+        <div>
+          <div class="photo-placeholder">
+             <img src="images/amitceo.png" alt="Amit" width="200px" height="200px">
+          </div>
+          <h3>Amit Indrabali Yadav</h3>
+          <p>Founder/CEO - Chief Executive Officer</p>
+        </div>
+        <div>
+          <div class="photo-placeholder">
+           <img src="images/rupesh-removebg-preview.png" alt="Amit" width="200px" height="200px">
+          </div>
+          <h3>Rupesh Govind Pendari</h3>
+          <p>Founder/CFO - Chief Finance Officer</p>
+        </div>
+        <div>
+          <div class="photo-placeholder">
+            <img src="images/swati-removebg-preview.png" alt="Amit" width="200px" height="200px">
+          </div>
+          <h3>Swati Suresh Mishra</h3>
+          <p>COO - Chief Operating Officer</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="outlets-section">
+      <h2>Our Outlets</h2>
+     
+      <a href="franchise.html" class="franchise-btn">Apply For Franchise</a>
+      <div class="outlets">
+        <div><strong>Bhayandar (East)</strong><br>Shop no. 1 & 2, Sundar Bhavan<br>📧 cafe9teas@gmail.com<br>📞 +91-8424099219</div>
+        <div><strong>Nallasopara (East)</strong><br>Akansha Commercial Complex<br>📧 cafe9teasnsp@gmail.com<br>📞 +91-7304064166</div>
+        <div><strong>Virar (West)</strong><br>Paradise Park, Palghar<br>📧 cafe9teasvirar@gmail.com<br>📞 +91-9503021805</div>
+          <div><strong> Vasai ,(East) </strong><br>Evershine, Vasai<br>📧 cafe9teasvirar@gmail.com<br>📞 +91-9503021805</div>
+        <div><strong> Vasai (West)</strong><br>Anand Nagar, Vasai<br>📧 cafe9teasvirar@gmail.com<br>📞 +91-9503021805</div>
+       <div><strong>Prayagraj (U.P.)</strong><br>Tagore Town, U.P<br>📧 cafe9teasvirar@gmail.com<br>📞 +91-9503021805</div>
+      <div><strong>Prayagraj (U.P.)</strong><br>Anand Bhavan, U.P<br>📧 cafe9teasvirar@gmail.com<br>📞 +91-9503021805</div>
+      
+      </div>
+    </section>
+  </main>
+
+  <!-- Include footer.html -->
+  <div include-html="footer.html"></div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu | 9Tea’s Cafe</title>
+ <link rel="stylesheet" href="Css/styles1.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <!-- Include loader script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('include-html');
+        fetch(file)
+          .then(res => {
+            if (!res.ok) throw new Error('File not found');
+            return res.text();
+          })
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute('include-html');
+          })
+          .catch(err => {
+            el.innerHTML = "<!-- Error loading include -->";
+          });
+      });
+    });
+  </script>
+
+  <!-- Include header.html -->
+  <div include-html="header.html"></div>
+
+
+  <!-- Menu Title -->
+  <section class="menu-header">
+    <h2>Our Menu</h2>
+    <p>Just Choose From The Best</p>
+  </section>
+
+  <!-- Drinks Section -->
+  <section class="menu-section">
+    <h3>Drinks</h3>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="images/coffie9teas.png"><span>Cold Coffee</span></div>
+      <div class="menu-item"><img src="images/milkshake.png"><span>Milkshake</span></div>
+      <div class="menu-item"><img src="images/GreenMojito.jpeg"><span>Mocktails</span></div>
+      <div class="menu-item"><img src="images/coffiee.jpg"><span>Coffee</span></div>
+      <div class="menu-item"><img src="images/Coolberg.png"><span>Coolberg</span></div>
+    </div>
+  </section>
+
+  <!-- Foods Section -->
+  <section class="menu-section">
+    <h3>Foods</h3>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="images/9teaspizza.png"><span>Pizza</span></div>
+      <div class="menu-item"><img src="images/9teasBurger.png"><span>Burger</span></div>
+      <div class="menu-item"><img src="images/fries9teas.png"><span>Fries</span></div>
+      <div class="menu-item"><img src="images/sandwich.png"><span>Sandwich</span></div>
+      <div class="menu-item"><img src="images/white-pasta.png"><span>Pasta</span></div>
+      <div class="menu-item"><img src="images/9teasmaggie.png"><span>Maggie</span></div>
+      <div class="menu-item"><img src="images/nachose9teas.png"><span>Nachos</span></div>
+      <div class="menu-item"><img src="images/GarlicBread.png"><span>Garlic Bread</span></div>
+      
+    </div>
+  </section>
+
+  <!-- Waffles Section -->
+ <!--  <section class="menu-section">
+    <h3>Waffles</h3>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="kitkatwaffle.jpg"><span>Kitkat</span></div>
+      <div class="menu-item"><img src="chocolatewaffle.jpg"><span>Chocolate</span></div>
+      <div class="menu-item"><img src="nutellawaffle.jpg"><span>Nutella</span></div>
+      <div class="menu-item"><img src="oreowaffle.jpg"><span>Oreo</span></div>
+      <div class="menu-item"><img src="9tspecialwaffle.jpg"><span>9T’s Special</span></div>
+    </div>
+  </section>-->
+
+  <!-- Desserts Section -->
+  <section class="menu-section">
+    <h3>Desserts</h3>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="images/lavacake.jpeg"><span>Choco lava cake</span></div>
+      <div class="menu-item"><img src="images/brownie.jpg"><span>Brownie</span></div>
+      <div class="menu-item"><img src="images/lavacake.jpeg"><span>Choco lava cake</span></div>
+      <div class="menu-item"><img src="images/brownie.jpg"><span>Brownie</span></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Include footer.html -->
+  <div include-html="footer.html"></div>
+
+</body>
+</html>
