@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 
 <!-- Glightbox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
   </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
   <!-- Include loader script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -65,17 +65,33 @@
 
         <div class="swiper-slide">
           <div class="menu-item">
-            <a href="images/pizza.png" class="glightbox">
-              <img src="images/pizza.png" alt="Pizza" class="menu-img">
+            <a href="images/margita.png" class="glightbox">
+              <img src="images/margita.png" alt="Pizza" class="menu-img">
             </a>
             <h4>Pizza</h4>
+          </div>
+        </div>
+      <div class="swiper-slide">
+          <div class="menu-item">
+            <a href="images/pasta.png" class="glightbox">
+              <img src="images/pasta.png" alt="Pizza" class="menu-img">
+            </a>
+            <h4>Pasta</h4>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="menu-item">
+            <a href="images/mojito.png" class="glightbox">
+              <img src="images/mojito.png" alt="Mojito" class="menu-img">
+            </a>
+            <h4>Mojito</h4>
           </div>
         </div>
 
         <div class="swiper-slide">
           <div class="menu-item">
-            <a href="images/mojito.png" class="glightbox">
-              <img src="images/mojito.png" alt="Mojito" class="menu-img">
+            <a href="images/GreenMojitopreview.png" class="glightbox">
+              <img src="images/GreenMojitopreview.png" alt="Mojito" class="menu-img">
             </a>
             <h4>Mojito</h4>
           </div>
@@ -101,14 +117,15 @@
 
       </div>
 
+      
       <!-- Navigation & Pagination -->
-      <div class="swiper-button-next"></div>
+      <!--<div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination"></div>-->
     </div>
     <!-- Swiper Slider Ends -->
 
-    <a class="btn-view-more" href="menu.html">View More</a>
+    <a class="btn-view-more" href="Menu.html">View More</a>
   </div>
 </section>
 
@@ -116,46 +133,75 @@
 
 
   <section class="reviews">
-    <div class="container">
-      <h2>Ratings and Review</h2>
-      <div class="review-list">
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
+  <div class="container">
+    <h2>Ratings and Reviews</h2>
+
+    <!-- Swiper Container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <img src="images/review6.jpeg" alt="Jessi">
+          </div>
         </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <img src="images/review2.jpeg" alt="Jessi">
+          </div>
         </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <img src="images/review3.jpeg" alt="Jessi">
+          </div>
         </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <img src="images/review4.jpg" alt="Jessi">
+          </div>
         </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <img src="images/Doc2.jpg" alt="Jessi">
+          </div>
         </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
-        </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
-        </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
-        </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
-        </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
-        </div>
-        <div class="review-card">
-          <img src="images/Doc2.jpg" alt="Jessi"></img>
-        </div>
-        
+
       </div>
+
+      <!-- Navigation Arrows -->
+     
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,   // Show 2 images per row
+    spaceBetween: 20,   // Gap between images
+    loop: true,         // Infinite loop
+    autoplay: {
+      delay: 2500,      // Auto-slide every 2.5s
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+  
 
   <section class="special">
     <div class="container">
@@ -230,13 +276,14 @@
         }
       </script>
       <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
-        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teaspizza.png"><img src="images/9teaspizza.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/white-pasta.png"><img src="images/white-pasta.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/garlik_bread.jpeg"><img src="images/garlik_bread.jpeg" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/GarlicBread.png"><img src="images/GarlicBread.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/GreenMojito.jpeg"><img src="images/GreenMojito.jpeg" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/indianstylepasta.jpeg"><img src="images/indianstylepasta.jpeg" class="img-fluid" alt=""></a></div>
        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
-       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
-       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
-       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
-       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/9teasBurger.png"><img src="images/9teasBurger.png" class="img-fluid" alt=""></a></div>
+       <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="images/GreenMojitopreview.png"><img src="images/GreenMojitopreview.png" class="img-fluid" alt=""></a></div>
        
         <!-- Add More Slides Here -->
       </div>
@@ -245,8 +292,7 @@
   </div>
 
 </section>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
 
 <!-- Glightbox JS -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
@@ -318,4 +364,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
