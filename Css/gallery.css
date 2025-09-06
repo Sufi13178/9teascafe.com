@@ -1,57 +1,41 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #222;
 }
 
-/* Header */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    background: #4b2e1e;
-    padding: 5px 20px;
-    color: white;
-    font-size: 14px;
-}
-.top-header .social-icons a {
-    color: white;
-    margin-right: 10px;
-}
-.top-header .contact i {
-    margin-right: 5px;
+.header {
+  background: #3c2b1c;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background: white;
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
-.logo img {
-    height: 50px;
+
+.navbar a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
 }
-.nav-links {
-    list-style: none;
-    display: flex;
+
+.navbar a.active {
+  border-bottom: 2px solid #f97316;
 }
-.nav-links li {
-    margin: 0 15px;
-}
-.nav-links a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-.nav-links a.active {
-    border-bottom: 2px solid black;
-}
+
 .franchise-btn {
-    background: orange;
-    color: white;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
+  background-color: #f97316;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 /* Gallery Header */
@@ -117,3 +101,36 @@ footer {
     margin-top: 5px;
     text-decoration: none;
 }
+
+
+.gallery-scroll {
+  display: flex;              /* align side by side */
+  gap: 20px;                  /* space between images */
+  overflow-x: auto;           /* enable horizontal scroll */
+  padding: 20px;
+  background: #333;           /* optional background */
+  scroll-behavior: smooth;    /* smooth scroll */
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  height: 8px;                /* scrollbar height */
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: #888;           /* scrollbar color */
+  border-radius: 10px;
+}
+
+.gallery-scroll img {
+  width: 300px;               /* fixed width */
+  height: 200px;              /* fixed height */
+  object-fit: cover;          /* crop image nicely */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery-scroll img:hover {
+  transform: scale(1.05);     /* zoom on hover */
+}
+
